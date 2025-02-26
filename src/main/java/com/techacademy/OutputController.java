@@ -18,9 +18,6 @@ public class OutputController {
     }
 
 
-        @GetMapping("/link")
-        public String getLink(Model model) {
-            model.addAttribute("id", "123");
-            return "link";
+
         }
-}
+
