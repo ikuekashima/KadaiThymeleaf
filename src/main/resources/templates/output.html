@@ -5,8 +5,10 @@
     <title>Tutorial of Thymeleaf</title>
 </head>
 <body>
-    <h1>Thymeleaf 課題</h1>
-    <p th:text="'前回入力された値は「' + ${val} + '」です。'"></p>
-    <p><a th:href="@{http://localhost:8080/input?previous=' + ${val} + '}">入力画面へ戻る</a></p>
+
+     <h1 th:text="#{content.title}"></h1>
+    <p th:text="'入力された値は「' + ${val} + '」です。'"></p>
+    <p><a th:href="@{http://localhost:8080/input(previous=${val})}"><p th:text="#{back.message}"></p></a>
+
 </body>
 </html>

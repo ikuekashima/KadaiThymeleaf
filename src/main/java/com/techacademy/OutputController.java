@@ -1,15 +1,17 @@
 package com.techacademy;
 
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
 
-import ch.qos.logback.core.model.Model;
-
+@Controller
 public class OutputController {
-    @GetMapping("/output")
-    public String postForm(@RequestParam("val") String val, Model model) {
 
-        // confirm.htmlに画面遷移
+    @PostMapping("/output")
+    public String postoutput(@RequestParam("val") String val, Model model) {
+        model.addAttribute("val", val);
+        // output.htmlに画面遷移
         return "output";
     }
 }
